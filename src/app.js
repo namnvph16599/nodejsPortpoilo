@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 //router
 import InfoRoute from "./routers/info";
 import SkillRoute from "./routers/skill";
+import ContactRoute from "./routers/contact";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/api", InfoRoute);
 app.use("/api", SkillRoute);
+app.use("/api", ContactRoute);
 
 //db
 mongoose
