@@ -36,6 +36,10 @@ const infoSchema = new Schema({
     type: String,
     required: true,
   },
+  github: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.model("Info", infoSchema);
