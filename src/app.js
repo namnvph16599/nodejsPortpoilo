@@ -4,6 +4,8 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 //router
 import InfoRoute from "./routers/info";
+import SkillRoute from "./routers/skill";
+
 const app = express();
 
 app.use(cors());
@@ -11,6 +13,8 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 app.use("/api", InfoRoute);
+app.use("/api", SkillRoute);
+
 //db
 mongoose
   .connect("mongodb://127.0.0.1:27017/portfolio")

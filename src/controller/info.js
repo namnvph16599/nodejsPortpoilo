@@ -1,5 +1,6 @@
 import Info from "../model/info";
 
+
 //get all info
 export const getInfo = async (req, res) => {
   try {
