@@ -8,6 +8,8 @@ import SkillRoute from "./routers/skill";
 import ContactRoute from "./routers/contact";
 import ResumeRoute from "./routers/resume";
 import UserRoute from "./routers/user";
+import ProjectRoute from "./routers/project";
+
 const app = express();
 
 app.use(cors());
@@ -19,6 +21,7 @@ app.use("/api", SkillRoute);
 app.use("/api", ContactRoute);
 app.use("/api", ResumeRoute);
 app.use("/api", UserRoute);
+app.use("/api", ProjectRoute);
 
 //db
 mongoose
