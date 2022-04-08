@@ -33,7 +33,14 @@ route.delete(
   isAdmin,
   removeSkill
 );
-route.put("/skill/:id/:userId", putSkill);
+route.put(
+  "/skill/:id/:userId",
+  checkUserById,
+  requireSignin,
+  isAuth,
+  isAdmin,
+  putSkill
+);
 
 route.param("userId", checkUserById);
 

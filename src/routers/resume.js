@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { getResume, postResume, putResume, removeResume } from "../controller/resume";
+import { checkUserById, isAdmin, isAuth, requireSignin } from "../middleware/middlewareUser";
 
 const route = Router();
 
 route.get("/resume", getResume);
-route.post("/resume", postResume);
-route.delete("/resume/:id", removeResume);
-route.put("/resume/:id", putResume);
+route.post("/resume/:userId",checkUserById,requireSignin,isAuth,isAdmin, postResume);
+route.delete("/resume/:id/:userId",checkUserById,requireSignin,isAuth,isAdmin, removeResume);
+route.put("/resume/:id/:userId",checkUserById,requireSignin,isAuth,isAdmin, putResume);
 
-
+route.param("userId", checkUserById)
 export default route;
