@@ -10,6 +10,17 @@ export const getResume = async (req, res) => {
     });
   }
 };
+
+export const getResumeById = async (req, res) => {
+  try {
+    const result = await Resume.findById({ _id: req.params.id}).exec();
+    res.json(result);
+  } catch (error) {
+    res.status(404).json({
+      message: "Unable to download Resume",
+    });
+  }
+};
 //post Resume
 export const postResume = async (req, res) => {
   try {

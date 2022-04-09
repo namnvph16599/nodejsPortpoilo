@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getInfo, postInfo, putInfo, removeInfo } from "../controller/info";
+import { getInfo, getInfoId, postInfo, putInfo, removeInfo } from "../controller/info";
 import {
   checkUserById,
   isAdmin,
@@ -10,6 +10,8 @@ import {
 const route = Router();
 
 route.get("/info", getInfo);
+route.get("/info/:id", getInfoId);
+
 route.post(
   "/info/:userId",
   checkUserById,

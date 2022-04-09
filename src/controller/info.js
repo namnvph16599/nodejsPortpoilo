@@ -12,6 +12,17 @@ export const getInfo = async (req, res) => {
     });
   }
 };
+
+export const getInfoId = async (req, res) => {
+  try {
+    const info = await Info.findById({ _id: req.params.id}).exec();
+    res.json(info);
+  } catch (error) {
+    res.status(404).json({
+      message: "Get info by id failed",
+    });
+  }
+};
 //post info
 export const postInfo = async (req, res) => {
   try {
