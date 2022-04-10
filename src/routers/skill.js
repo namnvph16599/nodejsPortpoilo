@@ -4,6 +4,7 @@ import {
   postSkill,
   putSkill,
   removeSkill,
+  getSkillById
 } from "../controller/skill";
 import {
   checkUserById,
@@ -15,6 +16,8 @@ import {
 const route = Router();
 
 route.get("/skill", getSkill);
+route.get("/skill/:id", getSkillById);
+
 
 route.post(
   "/skill/:userId",
@@ -45,3 +48,4 @@ route.put(
 route.param("userId", checkUserById);
 
 export default route;
+  

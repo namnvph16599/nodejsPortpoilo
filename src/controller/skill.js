@@ -11,6 +11,17 @@ export const getSkill = async (req, res) => {
     });
   }
 };
+
+export const getSkillById = async (req, res) => {
+  try {
+    const skill = await Skill.findById({ _id: req.params.id }).exec();
+    res.json(skill);
+  } catch (error) {
+    res.status(404).json({
+      message: "Unable to download skill",
+    });
+  }
+};
 //post info
 export const postSkill = async (req, res) => {
   try {

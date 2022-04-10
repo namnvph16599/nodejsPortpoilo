@@ -12,7 +12,7 @@ export const signin = async (req, res) => {
     if (!user.authenticate(password)) {
       res.json({ message: "Password wrong" });
     }
-    const token = jwt.sign({ _id: user._id }, "123456", { expiresIn: 60 * 60 });
+    const token = jwt.sign({ _id: user._id }, "123456", { expiresIn: 3600 * 1000 });
     res.json({
       token,
       user: {
