@@ -5,10 +5,13 @@ import mongoose from "mongoose";
 //router
 import InfoRoute from "./routers/info";
 import SkillRoute from "./routers/skill";
+import SoftSkillRoute from "./routers/softSkill";
+
 import ContactRoute from "./routers/contact";
 import ResumeRoute from "./routers/resume";
 import UserRoute from "./routers/user";
 import ProjectRoute from "./routers/project";
+
 
 const app = express();
 
@@ -22,6 +25,8 @@ app.use("/api", ContactRoute);
 app.use("/api", ResumeRoute);
 app.use("/api", UserRoute);
 app.use("/api", ProjectRoute);
+app.use("/api", SoftSkillRoute);
+
 
 //db
 mongoose
