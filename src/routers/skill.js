@@ -8,8 +8,8 @@ import {
 } from "../controller/skill";
 import {
   checkUserById,
-  isAdmin,
   isAuth,
+  isAdmin,
   requireSignin,
 } from "../middleware/middlewareUser";
 

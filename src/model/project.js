@@ -5,11 +5,15 @@ const projectSchema = new Schema({
     type: String,
     required: true,
   },
-  link: {
+  domains: {
     type: String,
     required: true,
   },
-  description: {
+  github: {
+    type: String,
+    required: true,
+  },
+  technology : {
     type: String,
     required: true,
   },

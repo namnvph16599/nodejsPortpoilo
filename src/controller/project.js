@@ -26,7 +26,9 @@ export const postProject = async (req, res) => {
 };
 export const removeProject = async (req, res) => {
   try {
-    const result = await  Project.findOneAndRemove({ _id: req.params.id });
+    const result = await Project.findOneAndDelete({
+      _id: req.params.id,
+    }).exec();
     res.json(result);
   } catch (error) {
     res.status(404).json({ message: "Remove  projects by id failed" });
@@ -37,7 +39,11 @@ export const putProject = async (req, res) => {
   const doc = req.body;
   const option = { new: true };
   try {
-    const result = await  Project.findByIdAndUpdate(condition, doc, option).exec();
+    const result = await Project.findByIdAndUpdate(
+      condition,
+      doc,
+      option
+    ).exec();
     res.json(result);
   } catch (error) {
     res.status(404).json({ message: "Update  projects by id failed" });
