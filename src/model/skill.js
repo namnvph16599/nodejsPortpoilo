@@ -6,7 +6,7 @@ const skillSchema = new Schema({
     required: true,
   },
   skillProgress: {
-    type: Number,
+    type: String,
     required: true,
   },
 });
