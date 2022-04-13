@@ -30,7 +30,8 @@ app.use("/api", SoftSkillRoute);
 
 //db
 mongoose
-  .connect("mongodb://127.0.0.1:27017/portfolio")
+  // .connect("mongodb://127.0.0.1:27017/portfolio")
+  .connect("mongodb+srv://nvnam042:Vanhnam042@cluster0.thmde.mongodb.net/portfolio?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connect database succesfully");
   })
